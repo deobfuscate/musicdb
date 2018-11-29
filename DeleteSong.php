@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } 
 
 // sql to delete a record
-$sql = "DELETE FROM Song WHERE title = "; //change this to the current song
+$sql = "DELETE FROM Song WHERE title = "; //Fix this to change to the current song
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
