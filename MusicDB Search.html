@@ -3,85 +3,122 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
+* {
+  box-sizing: border-box;
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {padding: 10px 24px;}
 </style>
 </head>
 <body>
 
-<h2>MusicDB the largest music database!</h2>
-<p>If you would like to upload your own music click the following button.</p>
-<p>Browse through our selection of Music.</p>
-<p>Browse through our selection of Music.</p>
+<h2>Welcome to MusicDB browse the largest Music Library.</h2>
+<h3>Contribute to the fun!</h3>
+<t> To add a song to MusicDB click the following button!</t>
+<button class="button button1">Upload</button>
+<br></br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for songs.." title="Type in a name">
 
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Song Title</th>
+    <th style="width:20%;">Artist</th>
+    <th style="width:15%;">Album</th>
+    <th style="width:15%;">Release Year</th>
+    <th style="width:5%;">Genre</th>
+    <th style="width:5%;"></th>  
+  </tr>
+  <tr>
+    <td>Nonstop</td>
+    <td>Dake</td>
+    <td>Scorpion</td>
+    <td>2018</td>
+    <td>Rap</td>
+    <td><button class="delete">Delete</button></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+      <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-<div style="overflow:auto;">
-  <table>
-    <tr>
-      <th>Song Title</th>
-      <th>Artist</th>
-      <th>Album</th>
-      <th>Release Year</th>
-      <th>Song ID</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td>Song1</td>
-      <td>Artist1</td>
-      <td>Album1</td>
-      <td>Release Year1</td>
-      <td>Song ID1</td>
-      <td><input type="submit" value="Delete"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-<tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-<tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-</tr>
-
-  </table>
-</div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    song = tr[i].getElementsByTagName("td")[0];
+    artist = tr[i].getElementsByTagName("td")[1];
+    album = tr[i].getElementsByTagName("td")[2];
+    year = tr[i].getElementsByTagName("td")[3];
+    genre = tr[i].getElementsByTagName("td")[4];
+    if (song || artist || album || genre || year) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 
 </body>
 </html>
