@@ -103,12 +103,8 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    song = tr[i].getElementsByTagName("td")[0];
-    artist = tr[i].getElementsByTagName("td")[1];
-    album = tr[i].getElementsByTagName("td")[2];
-    year = tr[i].getElementsByTagName("td")[3];
-    genre = tr[i].getElementsByTagName("td")[4];
-    if (song || artist || album || genre || year) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
