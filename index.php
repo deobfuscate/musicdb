@@ -81,7 +81,6 @@
 		print "<td><button class=\"delete\">Delete</button></td>";
 		print "</tr>";
 	}
-	$sql->free();
 	$dbc->close();
 ?>
 </table>
