@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$genrePref = parseInput($_POST["favgenre"]);
 
 	$sql = "INSERT INTO User (userID, password, firstName, lastName, genrePref)
-VALUES ({$userID}, {$userPassword}, {$firstName}, {$lastName}, {$genrePref})";
+VALUES ('$userID', '$userPassword', '$firstName', '$lastName', '$genrePref')";
 	if ($dbc->query($sql) === TRUE) {
 		echo "New user created successfully<br>\n";
 		echo "<a href=\"./\">Go Back</a>";
