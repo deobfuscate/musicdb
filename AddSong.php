@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO Song (title, artist, album, releaseYear,)
 VALUES (songTitle, artist, album, releaseYear)"; //I'm not sure what to do about songID yet
 
-if ($conn->query($sql) === TRUE {
+if ($conn->query($sql) == TRUE {
 	echo "New record created successfully";
 } 
 else {
