@@ -76,7 +76,7 @@
 		print "<td>{$song['album']}</td>";
 		print "<td>{$song['releaseYear']}</td>";
 		print "<td></td>";
-		print "<td><button class="delete">Delete</button></td>";
+		print "<td><button class=\"delete\">Delete</button></td>";
 		print "</tr>";
 	}
 	$sql->free();
