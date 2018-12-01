@@ -54,8 +54,8 @@
 <h2>Welcome to MusicDB browse the largest Music Library.</h2>
 <h3>Contribute to the fun!</h3>
 <t> To add a song to MusicDB click the following button!</t><br>
-<a href="SignUpForm.html" class="button button1">Sign Up</button>
-<a href="AddSong.html" class="button button1">Add Song</button>
+<a href="SignUpForm.html" class="button button1">Sign Up</a>
+<a href="AddSong.html" class="button button1">Add Song</a>
 <br></br>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for songs.." title="Type in a name">
 
