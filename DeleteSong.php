@@ -1,25 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:rgb(166, 192, 179);">
+
+<h2>Welcome to MusicDB </h2>
+<h3> Join the largest music database in the world! </h3>
 <?php
-include("mysql.php");
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	include("mysql.php");
+	// define variables and set to empty values
+	$username = $password = $songid = "";
+	$username = parseInput($_POST["username"]);
+	$password = parseInput($_POST["password"]);
+	$songid = parseInput($_POST["songID"]);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-// sql to delete a record
-$sql = "DELETE FROM Song WHERE title = "; //Fix this to change to the current song
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $conn->error;
+	$sql = "DELETE FROM Song WHERE SongID=$songid";
+	if ($dbc->query($sql) === TRUE) {
+		echo "Song deleted successfully<br><br>\n";
+		echo "<a href=\"./\">Go Back</a>";
+	}
+	else {
+		echo "Error: " . $sql . "<br>" . $dbc->error;
+	}
+	$dbc->close();
 }
-
-$conn->close();
+function parseInput($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+ 	return $data;
+}
 ?>
+	</body>
+</html>
