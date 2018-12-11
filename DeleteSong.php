@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	$sql = "DELETE FROM Song WHERE SongID=$songid";
 	if ($dbc->query($sql) === TRUE) {
-		echo "Song deleted successfully<br>\n";
+		echo "Song deleted successfully<br><br>\n";
 		echo "<a href=\"./\">Go Back</a>";
 	}
 	else {

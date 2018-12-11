@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sql = "INSERT INTO Song (userID, password, title, artist, album, releaseYear)
 VALUES ('$userID', '$userPassword', '$title', '$artist', '$album', STR_TO_DATE('$releaseYear', '%Y'))";
 	if ($dbc->query($sql) === TRUE) {
-		echo "Song added successfully<br>\n";
+		echo "Song added successfully! <br><br>\n";
 		echo "<a href=\"./\">Go Back</a>";
 	}
 	else {
