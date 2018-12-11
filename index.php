@@ -66,7 +66,6 @@
     <th style="width:20%;">Artist</th>
     <th style="width:15%;">Album</th>
     <th style="width:15%;">Release Year</th>
-    <th style="width:5%;">Genre</th>
     <th style="width:5%;"></th>  
   </tr>
 <?php
@@ -77,8 +76,7 @@
 		print "<td>{$song['artist']}</td>";
 		print "<td>{$song['album']}</td>";
 		print "<td>{$song['releaseYear']}</td>";
-		print "<td></td>";
-		print "<td><button class=\"delete\">Delete</button></td>";
+		print "<td><a class=\"button button1\" href=\"DeletePage.php?songid={$song['songID']}\">Delete</button></td>";
 		print "</tr>";
 	}
 	$dbc->close();
