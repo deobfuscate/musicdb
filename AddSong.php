@@ -23,7 +23,9 @@ VALUES ('$userID', '$userPassword', '$title', '$artist', '$album', STR_TO_DATE('
 		echo "<a href=\"./\">Go Back</a>";
 	}
 	else {
-		echo "Error: " . $sql . "<br>" . $dbc->error;
+		//echo "Error: " . $sql . "<br>" . $dbc->error;
+		echo "Could not add song! Are you sure your username and password are correct?<br>";
+		echo "<a href=\"./\">Go Back</a>";
 	}
 	$dbc->close();
 }
