@@ -3,15 +3,12 @@
 <body>
 <h1> Are you sure you want to delete this song? </h1>
 <h2> Type in your username and password to confirm </h2>
-<form action="DeleteSong.php">
+<form action="DeleteSong.php" method="POST">
   Username:<br>
   <input type="text" name="username"><br>
   Password:<br>
   <input type="text" name="password"><br><br>
   <input type="submit" value="Delete">
-  <input type="submit" value="Cancel">
 </form>
-
 </body>
-
 </html>
