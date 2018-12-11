@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$releaseYear = parseInput($_POST["releaseYear"]);
 
 	$sql = "INSERT INTO Song (userID, password, title, artist, album, releaseYear)
-VALUES ('$userID', '$userPassword', '$title', '$artist', '$album', STR_TO_DATE('$releaseYear', '%Y');
+VALUES ('$userID', '$userPassword', '$title', '$artist', '$album', STR_TO_DATE('$releaseYear', '%Y')";
 	if ($dbc->query($sql) === TRUE) {
 		echo "Song added successfully<br>\n";
 		echo "<a href=\"./\">Go Back</a>";
