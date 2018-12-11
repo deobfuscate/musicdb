@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$password = parseInput($_POST["password"]);
 	$songid = parseInput($_POST["songID"]);
 
-	$sql = "DELETE FROM Song WHERE SongID=$songid AND userID=$username AND password=$password";
+	$sql = "DELETE FROM Song WHERE SongID=$songid AND userID='$username' AND password='$password'";
 	if ($dbc->query($sql) === TRUE) {
 		echo "Song deleted successfully<br><br>\n";
 		echo "<a href=\"./\">Go Back</a>";
