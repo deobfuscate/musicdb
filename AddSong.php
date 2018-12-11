@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:rgb(166, 192, 179);">
+
+<h2>Welcome to MusicDB </h2>
+<h3> Join the largest music database in the world! </h3>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	include("mysql.php");
@@ -28,3 +34,5 @@ function parseInput($data) {
  	return $data;
 }
 ?>
+	</body>
+</html>
